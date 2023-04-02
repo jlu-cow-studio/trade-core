@@ -51,6 +51,8 @@ func (h *Handler) OrderList(ctx context.Context, req *trade_core.OrderListReques
 				UserType:    ofl.ItemInfo.UserType,
 			}
 		}
+
+		res.OrderList = append(res.OrderList, oi)
 	}
 	res.Base.Message = ""
 	res.Base.Code = "200"
