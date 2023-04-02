@@ -24,3 +24,11 @@ func TestOrder(t *testing.T) {
 	litter.Dump(order)
 	fmt.Println(err)
 }
+
+func TestOrderList(t *testing.T) {
+	mysql.Init()
+
+	list, err := OrderList("322", 0, 2)
+	litter.Dump(list)
+	fmt.Println(err)
+}

@@ -99,7 +99,7 @@ func Order(userId, itemId string, quantity int) (*mysql_model.Transaction, *mysq
 
 		//生成订单
 		order = &mysql_model.Order{
-			UserID:           wallet.ID,
+			UserID:           wallet.UserID,
 			ItemID:           int(item.ID),
 			PurchaseQuantity: quantity,
 			UnitPrice:        item.Price,
@@ -126,4 +126,14 @@ func Order(userId, itemId string, quantity int) (*mysql_model.Transaction, *mysq
 		return nil
 	})
 	return transaction, order, err
+}
+
+func OrderList(userId string, offset, limit int) ([]*mysql_model.Order, error) {
+	list := []*mysql_model.Order{}
+
+	if err := mysql.GetDBConn().Table("order_table").Where("user_id = ?", userId).Order("purchase_date desc").Limit(limit).Offset(offset).Find(&list).Error; err != nil {
+		return nil, err
+	}
+
+	return list, nil
 }
