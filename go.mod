@@ -3,8 +3,10 @@ module github.com/jlu-cow-studio/trade-core
 go 1.17
 
 require (
-	github.com/jlu-cow-studio/common v0.2.70
+	github.com/jlu-cow-studio/common v0.2.74
+	github.com/sanity-io/litter v1.5.5
 	google.golang.org/grpc v1.54.0
+	gorm.io/gorm v1.24.6
 )
 
 require (
@@ -35,5 +37,4 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.4.7 // indirect
-	gorm.io/gorm v1.24.6 // indirect
 )
