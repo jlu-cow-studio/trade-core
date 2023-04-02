@@ -3,7 +3,7 @@ module github.com/jlu-cow-studio/trade-core
 go 1.17
 
 require (
-	github.com/jlu-cow-studio/common v0.2.68
+	github.com/jlu-cow-studio/common v0.2.69
 	github.com/jlu-cow-studio/product-core v0.0.9
 	google.golang.org/grpc v1.54.0
 )
