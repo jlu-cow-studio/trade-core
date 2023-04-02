@@ -10,7 +10,7 @@ import (
 	"github.com/jlu-cow-studio/common/dal/redis"
 	"github.com/jlu-cow-studio/common/dal/rpc/trade_core"
 	"github.com/jlu-cow-studio/common/discovery"
-	"github.com/jlu-cow-studio/product-core/handler"
+	"github.com/jlu-cow-studio/trade-core/handler"
 	"google.golang.org/grpc"
 )
 
