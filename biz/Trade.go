@@ -128,10 +128,10 @@ func Order(userId, itemId string, quantity int) (*mysql_model.Transaction, *mysq
 	return transaction, order, err
 }
 
-func OrderList(userId string, offset, limit int) ([]*mysql_model.Order, error) {
-	list := []*mysql_model.Order{}
+func OrderList(userId string, offset, limit int) ([]*mysql_model.OrderForList, error) {
+	list := []*mysql_model.OrderForList{}
 
-	if err := mysql.GetDBConn().Table("order_table").Where("user_id = ?", userId).Order("purchase_date desc").Limit(limit).Offset(offset).Find(&list).Error; err != nil {
+	if err := mysql.GetDBConn().Preload("ItemInfo").Table("order_table").Where("user_id = ?", userId).Order("purchase_date desc").Limit(limit).Offset(offset).Find(&list).Error; err != nil {
 		return nil, err
 	}
 
