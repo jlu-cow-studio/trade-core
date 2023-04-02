@@ -5,7 +5,7 @@ CONTAINER_NAME=trade-core
 
 SERVICE_NAME=cowstudio/trade-core
 SERVICE_PORT=3084
-SERVICE_ADDRESS=cowstudio.wayne-lee.cn
+SERVICE_ADDRESS=$(curl -s http://ipecho.net/plain)
 SIDECAR_PORT=4084
 
 # 构建镜像
